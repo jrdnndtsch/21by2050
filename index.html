@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua|Krona+One|Work+Sans:400,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>21 by 2050</title>
+</head>
+<body>
+    <main class="fullpage">
+        <nav class="main-nav">
+            <div class="wrapper">
+                <div>
+                    <img src="assets/nav-logo.svg" alt="">
+                    <img src="assets/menu-close.svg" alt="" id="nav-close">
+                </div>
+                <ul>
+                    <li><a href="#">Calculator</a></li>
+                    <li><a href="#">Emissions threshold</a></li>
+                    <li><a href="#">The problems</a></li>
+                    <li><a href="#">Your individual impact</a></li>
+                    <li><a href="#">What you should do</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Methodology</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+            
+        </nav>
+        <a href="#" id="nav-open" class="nav-open"><img src="assets/nav-open.svg" alt=""></a>
+        <section class="dark-blue intro section">
+            <div class="wrapper">
+                <div>
+                    <img src="assets/world-icon.svg" alt="icon of the globe">
+                    <h2>Is our <span></span></h2>
+                    <h2>global diet</h2>
+                    <h2>sustainable?</h2>
+                </div>
+                <a href="#" class="scroll-next"><img src="assets/scroll-down-to-find-out.svg" alt="scroll down to find out with an arrow"></a>
+            </div>
+        </section>
+        <section class="light-blue section">
+            <div class="wrapper">
+                <form action="">
+                    <label for="beef-per-week">How many times do you eat beef in a week?</label>
+                    <input type="text" id="beef-per-week" name="beef-per-week">
+                    <label for="beef-per-meal">On average, how many servings of beef per meal?</label>
+                    <input type="text" id="beef-per-meal" name="beef-per-meal">
+                    <div>
+                        <figure>
+                            <img src="assets/taco.svg" alt="taco">
+                            <figcaption>
+                                <p>1 serving</p>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/burger.svg" alt="burger">
+                            <figcaption>
+                                <p>2 servings</p>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/steak.svg" alt="steak">
+                            <figcaption>
+                                <p>3 servings</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <input type="submit" value="Calculate" class="button">
+                </form>
+            </div>
+        </section>
+        <section class="individual-results good">
+            <div class="wrapper">
+                <h2>Yay</h2>
+                <p>If everyone had your diet in 2050, <span class="individual-percentage"></span> of our <span>emissions threshold</span> would be spent on beef!</p>
+                <svg class="percentage-pie-chart" id="good-pie" width="362" height="362"></svg>
+                <p>This is consistent with our current emissions ratios and a good place to be.</p>
+                <a href="#" class="scroll-next"><img src="assets/good-arrow.svg" alt=""></a>
+            </div>
+        </section>
+        <section class="individual-results med">
+            <div class="wrapper">
+                <h2>Not ideal.</h2>
+                <p>If everyone had your diet in 2050, <span class="individual-percentage"></span> of our <span>emissions threshold</span> would be spent on beef!</p>
+                <svg class="percentage-pie-chart" id="med-pie" width="362" height="362"></svg>
+                <p>There are many other contributors to emissions that still need to be accounted for.</p>
+                <a href="#" class="scroll-next"><img src="assets/med-arrow.svg" alt=""></a>
+            </div>
+        </section>
+        <section class="individual-results bad">
+            <div class="wrapper">
+                <h2>Uh oh.</h2>
+                <p>If everyone had your diet in 2050, <span class="individual-percentage"></span> of our <span>emissions threshold</span> would be spent on beef!</p>
+                <svg class="percentage-pie-chart" id="bad-pie" width="362" height="362"></svg>
+                <p>There are many other contributors to emissions that still need to be accounted for.</p>
+                <a href="#" class="scroll-next"><img src="assets/bad-arrow.svg" alt=""></a>
+            </div>
+        </section>
+        <section class="light-blue section">
+            <div class="wrapper p-large">
+                <h2 class="title-reg">What is the emissions threshold?</h2>
+                <p>Leaders around the world have formed agreements with the goal of limiting global temperature rise by 2° C.</p>
+                <p>To meet this goal, emissions from human activities must stay below 21 gigatons per year by 2050.</p>
+            </div>
+        </section>
+        <section class="pink section">
+            <div class="wrapper p-large">
+                <p>The situation is intensified by a climb in global population – expected to be 10 billion by 2050.</p>
+                <p>If 10 billion people shared your beef eating habits, we’d create 8 gigatons of greenhouse gas.</p>
+            </div>
+        </section>
+        <section>
+            GRAPHS
+        </section>
+        <section class="light-blue section">
+            <div class="wrapper">
+                <h2 class="problem">Problem One</h2>
+                <p class="p-med">Your diet leaves x% of the threshold for:</p>
+                <ul class="p-med list">
+                    <li>Electricity and heat generation</li>
+                    <li>Industry and Manufacturing</li>
+                    <li>Transportation</li>
+                    <li>Buildings</li>
+                    <li>The rest of our agriculture</li>
+                </ul>
+            </div>
+        </section>
+        <section class="pink multi-wrapper problem-two section">
+            <div class="wrapper wrapper-no-bg">
+                <h2 class="problem">Problem Two</h2>
+            </div>
+            <div class="wrapper">
+                <p class="p-xl">Current agreements don’t address diet and agriculture as an area to reduce</p>
+                <p class="p-xl">emissions – a significant omission.</p>
+                <img src="assets/burger-large.svg" alt="burger">
+            </div>
+        </section>
+        <section class="light-blue section">
+            <div class="wrapper p-med">
+                <p>If business continues as usual, emissions from the agriculture sector alone could reach 20.2 gigatons – nearly the total emissions threshold for 2050.</p>
+                <p>Combined with non-agricultural sectors, global emissions would greatly exceed 21 gigatons with severe consequences for people, public health, and ecosystems.</p>
+                <p>Today, 14.5% of global emissions come from raising animals for human consumption. Of these emissions, beef production accounts for the largest percentage.</p>
+                <p>Most of the emissions from cows are produced naturally during digestion in the form of methane gas. This gas is 84 times more potent than CO2.</p>
+                <img src="assets/arrow-blue.svg" alt="">
+            </div>
+        </section>
+        <section class="pink individual-impact section">
+            <div class="wrapper p-med">
+                <h2 class="title-reg">What’s your individual impact?</h2>
+                <p>Your annual diet of beef produces 0.2 kg CO2e of greenhouse gas.</p>
+                <p>Thats like driving xkm in an average car.</p>
+                <img src="assets/meat-truck.svg" alt="food truck selling tacos and burgers">
+            </div>
+        </section>
+        <section class="light-blue section">
+            <div class="wrapper p-xl">
+                <p>Beef is one major source of greenhouse gas emissions that everyone can choose to limit. By making a conscious decision to change our diet we can make a difference in fighting climate change.</p>
+                <img src="assets/arrow-blue.svg" alt="">
+            </div>
+        </section>
+        <section class="multi-wrapper p-sm what-should-i-do section">
+            <div class="wrapper">
+                <h2 class="title-primary">What should I do?</h2>
+                <p>Meat is important in many people’s diet, and when eaten in moderation it can provide healthy, complete proteins, along with other nutrients such as iron, zinc, vitamins B-12, B-6 and niacin. However, consumers eat far more meat than needed to get their recommended amount of daily protein 2.</p>
+                <p>We can improve our health and even extend our lives by eating more vegetables and less meat (needs source). More importantly, we can help make the world sustainable.</p>
+            </div>
+            <div class="solution-block light-blue">
+                <div class="wrapper">
+                    <p>Eat less beef and dairy. When you do eat beef or dairy, choose grass-fed, organic and pasture-raised.</p>
+                    <div>
+                        <img src="assets/milk.svg" alt="milk carton next to glass">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-sm multi-wrapper section">
+            <div class="solution-block">
+                <div class="wrapper">
+                    <p>Choose humane and avoid processed/preserved animal products.</p>
+                    <div><img src="assets/humane-foods.svg" alt="cheese, chicken, eggsa nd a sunny side up egg"></div>
+                </div>
+            </div>
+            <div class="solution-block pink">
+                <div class="wrapper">
+                    <p>Waste less – buy right-size portions and eat what you buy. On average, uneaten meat accounts for more than 20% of meat’s greenhouse gas emissions 5.</p>
+                    <div><img src="assets/steak-dinner.svg" alt="steak and salad on a plate"></div>
+                </div>
+            </div>
+        </section>
+        <section class="multi-wrapper p-sm section">
+            <div class="solution-block"> 
+                <div class="wrapper">
+                    <p>Eat more plants – low-impact protein foods like grains, legumes, nuts, and tofu. See other meat alternatives.</p>
+                    <div><img src="assets/salad.svg" alt="salad"></div>
+                </div>
+            </div>
+            <div class="solution-block light-blue">
+                <div class="wrapper">
+                    <p>Support policies aimed at making the price of beef reflect its environmental cost link.</p>
+                    <div><img src="assets/sun.svg" alt="sun"></div>
+                </div>
+            </div>
+        </section>
+        <section class="dark-blue section">
+            <div class="wrapper p-large">
+                <h2 class="title-reg">So what do you think?</h2>
+                <p>If everyone ate the same amount of beef as you, that would be x% of the global greenhouse gas emissions budget in 2050.</p>
+                <p>Could you reduce your consumption to help combat climate change?</p>
+            </div>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="scrollify.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

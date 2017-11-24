@@ -1,0 +1,307 @@
+//VARIABLES
+$blue : #3723FF
+$white : #FFFFFF
+$blue-light : #E2F8FF
+$beige : #FFFCF5
+$beige-dark : #EAE5DA
+$pink : #FFE6ED
+
+$red : #DF3965
+$green : #71BF51
+$yellow : #E2B920
+
+$font-header : 'Krona One', sans-serif
+$font-body : 'Work Sans', sans-serif
+$font-accent : 'Inknut Antiqua', serif
+// BASE STYLES
+html 
+    :font-size 62.5%
+
+body 
+    :font-family 'Work Sans', sans-serif
+    :color $blue
+    :background $beige
+
+h2 
+    :font-size 5.4rem
+
+// GENERIC
+ul.list 
+    :padding-left 32px
+    li 
+        :padding-bottom 6px
+section 
+    :min-height 100vh
+    :display flex
+    :align-items center 
+    :justify-content center
+    &.dark-blue
+        :background $blue
+        :color $white 
+    &.light-blue
+        :background $blue-light
+    &.pink
+        :background $pink
+        .wrapper
+            :background $beige  
+            :padding 50px
+        .wrapper-no-bg
+            :background transparent    
+section.multi-wrapper 
+    :flex-direction column 
+    :align-items stretch
+    // :justify-content space-around           
+.wrapper 
+    :width 80%
+    :max-width 1040px
+    :margin 0 auto
+.button
+    :background $blue
+    :color $white
+    :font-family $font-header
+    :font-size 4.4rem
+    :text-align center
+    :width 100%
+    :border-radius 0
+    :border none
+    :padding 18px
+
+
+.title-reg 
+    :font-weight normal
+.title-primary 
+    :font-size 5.4rem
+    :font-family $font-header 
+    :line-height 7rem   
+.problem 
+    :font-family $font-accent
+    :border 3px solid $blue
+    :background $beige
+    :display inline-block
+    :padding 12px 24px
+    :margin 0
+    :font-size 4.9rem
+    :line-height 4.9rem
+    :box-shadow -10px 10px 0 $blue
+
+.p-xl
+    :font-size 5.2rem
+.p-large
+    :font-size 3.8rem   
+.p-med 
+    :font-size 2.7rem   
+.p-sm 
+    :font-size 2.2rem  
+    :line-height 3.2rem        
+
+//SECTIONS    
+
+form 
+    :text-align center
+    :background $beige   
+    :padding 44px
+    label 
+        :font-size 3rem  
+        :display block
+        :margin-bottom 28px
+    input + label 
+        :margin-top 80px    
+    input[type=text]
+        :background $blue-light
+        :border none    
+        :width 100%
+        :font-size 4.6rem
+        :font-family $font-header
+        :color $blue
+        :text-align center
+        :padding 16px
+    >div 
+        :display flex   
+        :margin-top 20px
+        :justify-content space-between
+        figcaption p
+            :font-size 1.9rem  
+            :margin 0  
+    .button
+        :margin-top 44px     
+
+.solution-block
+    :flex-grow 1
+    :display flex
+    :padding 20px 0
+    &.light-blue 
+        :background $blue-light
+    &.pink
+        :background $pink
+    .wrapper 
+        :align-items center
+        :display flex
+        p  
+            :margin-right 40px
+            :line-height 40px
+
+//SPECIFICS
+.intro 
+    :align-items stretch
+    :padding 180px 0 30px
+    .wrapper 
+        :display flex 
+        :flex-direction column
+        :justify-content space-between
+    h2 
+        :margin 0
+        :font-family $font-accent
+        :font-size 8.6rem
+        :line-height 129px
+    h2:first-of-type 
+        :display flex
+        :align-items center
+        span    
+            :height 4px
+            :background $white
+            :display block  
+            :flex-grow 1  
+            :margin-left 40px
+            :margin-top 20px
+    h2:nth-of-type(2)
+        :font-family $font-header
+        :font-size 9rem
+    a 
+        :display block
+        :text-align center
+        :margin-top 40px
+        img
+            :width 424px
+            :margin 0 auto    
+.problem-two
+    .wrapper:last-of-type 
+        :position relative
+        :margin-bottom 170px
+    p 
+        :margin 0
+        &:last-of-type 
+            :width 60%
+    img  
+        :position absolute
+        :bottom -150px
+        :right 0    
+.individual-impact.pink 
+    :padding-bottom 120px
+    .wrapper 
+        :position relative
+        :padding-bottom 260px
+        img 
+            :width 500px
+            :position absolute
+            :bottom -120px
+            :left 50%
+            :transform translateX(-50%)
+.what-should-i-do
+    >.wrapper
+        :flex-grow 1  
+.methodology, .sources 
+    :padding 100px 0
+    h2 
+        :font-size 2.1rem
+        :font-family $font-accent  
+        :margin-top 0
+    p  
+        :font-size 1.8rem
+    h3 
+        :font-size 1.8rem 
+        :font-weight 800                
+    li 
+        :font-size 1.8rem
+        :padding-bottom 8px
+        :word-wrap break-word
+    ol 
+        :list-style none  
+        :padding 0      
+.methodology
+    :background $pink                
+
+.individual-results
+    :display none
+    h2 
+        :font-size 7.7rem 
+        :font-family $font-accent
+        :margin 0
+        :line-height 10rem
+    p
+        :font-size 3.2rem
+        :line-height 4.2rem
+    span 
+        :font-family $font-accent
+        :font-weight bold 
+    a 
+        :display block 
+        :width 39px
+        :margin 16px auto
+        img 
+            :width 39px           
+    p:last-of-type 
+        :font-size 2.7rem        
+    &.good 
+        :border 9px solid $green
+        :color $green
+    &.med 
+        :border 9px solid $yellow
+        :color $yellow
+    &.bad            
+        :border 9px solid $red
+        :color $red
+
+.individual-results.active
+    :display flex
+
+
+
+// NAVIGATION
+.nav-open 
+    :position fixed
+    :z-index 1
+    :top 50px
+    :right 50px
+.main-nav.active 
+    :display block    
+.main-nav 
+    :display none
+    :position fixed 
+    :top 0
+    :left 0
+    :width 100%
+    :height 100%
+    :z-index 10
+    :background $beige 
+    .wrapper 
+        :display flex 
+        :height 100%
+        :justify-content space-around
+        :flex-direction column 
+        >div 
+            :display flex 
+            :justify-content space-between
+            :align-items flex-start       
+    ul
+        :list-style none
+        :margin 0
+        :padding 0 
+        a  
+            :color $blue 
+            :text-decoration none 
+    ul:first-of-type
+        a   
+            :font-family $font-header
+            :font-size 4rem
+            :border-top 2px solid $pink
+            :display block
+            :padding 22px 0
+        li     
+            &:last-of-type 
+                a
+                    :border-bottom 2px solid $pink
+    ul:last-of-type 
+        a  
+            :font-family $font-accent
+            :font-size 3rem
+                            
