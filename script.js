@@ -2,16 +2,6 @@
 
 
 const beefcalc = {};
-// let pie_data = [
-//     {
-//         label: 'beef', 
-//         val: 0
-//     }, 
-//     {
-//         label: 'everything else', 
-//         val: 0
-//     }
-// ]
 
 beefcalc.individual_annual_emission = (beef_per_week, serving_size) => {
     return ((beef_per_week * serving_size * 75) / 1000) * (52.1429 * 27)
