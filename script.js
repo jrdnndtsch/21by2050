@@ -78,10 +78,90 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
 
 
 $(function() {
-//   $.scrollify({
-//     section : ".section",
-//     setHeights: false
-//   });
+  $.scrollify({
+    section : ".section",
+    setHeights: false,
+    after: function (e, j) {
+        if($.scrollify.current().hasClass('city')){
+            cityAnimationUp();
+        } else if ($.scrollify.current().hasClass('problem-one')) {
+            problemOneAnimation();
+        }
+     },
+  });
+//  ****  Greensock animation ****
+
+// City animation
+var cityAnimationUp = function(){
+    var tlCity = new TimelineMax({});
+
+    tlCity.to(building_1, 0.5, { x: 0, y: 0 })
+        .to(building_3, 0.5, { x: 0, y: 0 })
+        .to(building_5, 0.5, { x: 0, y: 0 })
+        .to(building_7, 0.5, { x: 0, y: 0 })
+        .to(building_9, 0.5, { x: 0, y: 0 })
+        .to(building_11, 0.5, { x: 0, y: 0 })
+        .to(building_12, 0.5, { x: 0, y: 0 })
+        .to(building_13, 0.5, { x: 0, y: 0 })
+        .to(building_14, 0.5, { x: 0, y: 0 })
+        .to(building_15, 0.5, { x: 0, y: 0 })
+        .to(building_16, 0.5, { x: 0, y: 0 })
+}
+
+    var cityAnimationDown = function () {
+        // Reset buildings
+
+        TweenMax.to(building_1, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_3, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_5, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_7, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_9, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_11, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_12, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_13, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_14, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_15, 0.5, { x: 0, y: 250 })
+        TweenMax.to(building_16, 0.5, { x: 0, y: 250 })
+    }
+
+// Truck animation
+    var tlTire1 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTire2 = new TimelineMax({
+        repeat: -1
+    })
+    var tire_1 = document.getElementById('tire_1')
+    var tire_2 = document.getElementById('tire_2')
+
+    tlTire1.to(tire_1, 0.8, { transformOrigin: "center", rotation: 360 })
+    tlTire2.to(tire_2, 0.8, {transformOrigin: "center", rotation: 360 });
+
+    var tlTruck = new TimelineMax({
+        repeat: -1
+    })
+
+    var truck_1 = document.getElementById('truck_1')
+
+    tlTruck.to(truck_1, 0.2, {x: 0, y: 3})
+            .to(truck_1, 0.2, {x: 0, y: 0 })
+
+
+    // Problem One animation
+    var problemOneAnimation = function(){
+        var tlCloud1 = new TimelineMax({
+            repeat: -1
+        })
+    
+        tlCloud1.to(cloud_1, 100, { x: 800, y: 0 })
+    
+        var tlCloud2 = new TimelineMax({
+            repeat: -1
+        })
+    
+        tlCloud2.to(cloud_2, 100, { x: 800, y: 0 })
+    }
+
   $('form').on('submit', (e) => {
       e.preventDefault();
       let beef_per_week = $('#beef-per-week').val();
