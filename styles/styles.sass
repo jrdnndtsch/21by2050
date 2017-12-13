@@ -199,8 +199,9 @@ form
 .what-should-i-do
     >.wrapper
         :flex-grow 1  
-.methodology, .sources 
+.methodology, .sources, .about 
     :padding 100px 0
+    :line-height 2.8rem
     h2 
         :font-size 2.1rem
         :font-family $font-accent  
@@ -219,6 +220,19 @@ form
         :padding 0      
 .methodology
     :background $pink                
+.about 
+    :background $blue-light
+    :height 100vh
+    :line-height 3.2rem
+    .studio-info
+        :margin-bottom 34px
+        &:last-of-type 
+            :margin-top 64px
+    a  
+        :font-size 2.1rem
+        :color $blue
+        :display block
+        :text-decoration none
 
 .individual-results
     :display none
