@@ -29,18 +29,31 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
     ]
     let svg, 
         color;
+    $('.individual-results').removeClass('good med bad')
     if(percentage_global_threshold < 10) {
-        svg = d3.select("#good-pie")
+        $('.individual-results').addClass('good active')
+        $('.individual-results h2').text('Yay')
+        $('.individual-results p.statement').text('This is consistent with our current emissions ratios and a good place to be.')
+        $('.individual-results img').attr('src', 'assets/good-arrow.svg')
+        
+        svg = d3.select("#pie")
         color = d3.scaleOrdinal(["#71BF51", "#EAE5DA"])
-        $('.individual-results.good').addClass('active')
         $('.good .individual-percentage').html(percentage_global_threshold + '%')
     } else if(percentage_global_threshold >= 10 && percentage_global_threshold <= 20) {
-        svg = d3.select("#med-pie")
+        $('.individual-results').addClass('med active')
+        $('.individual-results h2').text('Not ideal.')
+        $('.individual-results p.statement').text('There are many other contributors to emissions that still need to be accounted for.')
+        $('.individual-results img').attr('src', 'assets/med-arrow.svg')
+        svg = d3.select("#pie")
         color = d3.scaleOrdinal(["#E2B920", "#EAE5DA"])
-        $('.individual-results.med').addClass('active')
+        $('.individual-results').addClass('active')
         $('.med .individual-percentage').html(percentage_global_threshold + '%')
     } else {
-        svg = d3.select("#bad-pie")
+        $('.individual-results h2').text('Uh oh.')
+        $('.individual-results').addClass('bad active')
+        $('.individual-results p.statement').text('There are many other contributors to emissions that still need to be accounted for.')
+        $('.individual-results img').attr('src', 'assets/bad-arrow.svg')
+        svg = d3.select("#pie")
         color = d3.scaleOrdinal(["#DF3965", "#EAE5DA"])
         $('.individual-results.bad').addClass('active')
         $('.bad .individual-percentage').html(percentage_global_threshold + '%')
@@ -81,10 +94,11 @@ $(function() {
   $.scrollify({
     section : ".section",
     setHeights: false,
-    after: function (e, j) {
-        if($.scrollify.current().hasClass('city')){
+    after: function (i) {
+        if(i === 4){
             cityAnimationUp();
-        } else if ($.scrollify.current().hasClass('problem-one')) {
+            console.log('start city animation')
+        } else if (i === 6) {
             problemOneAnimation();
         }
      },
@@ -169,9 +183,21 @@ var cityAnimationUp = function(){
       let individual_emission = beefcalc.individual_annual_emission(beef_per_week, serving_size);
       let global_emission = beefcalc.global_annual_emissions(individual_emission);
       let percentage = beefcalc.percentage_global_threshold(global_emission);
+      let url = 'https://script.google.com/macros/s/AKfycbx0AZ4GbFSqEXloRZCSGwgiYE_uHAX3HjSGe6oCV_AHJTatTFE/exec'
       console.log(percentage)
+      sheet_data = $('form').serialize() + '&percentage=' + percentage + '&individual_emission=' + individual_emission + "&global_emission=" + global_emission
+      console.log(sheet_data);
+      $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: sheet_data
+      }).success(
+          // do something
+          );
       beefcalc.make_pie_chart(percentage)
-      $.scrollify.next();  
+      $.scrollify.current();
+      $.scrollify.next(); 
   })
 
   $('.scroll-next').on('click', (e) => {
