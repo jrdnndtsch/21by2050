@@ -33,7 +33,11 @@
             
         </nav>
         <a href="#" id="nav-open" class="nav-open"><img src="assets/nav-open.svg" alt=""></a>
+        <a href="./index.html" id="nav-restart" class="nav-restart">RESTART</a>
         <section class="dark-blue intro section">
+            <div class="logo-area">
+                <img src="assets/ipad-21by2050-logo.svg" alt="21 by 2050 logo">
+            </div>
             <div class="wrapper">
                 <div>
                     <img src="assets/world-icon.svg" alt="icon of the globe">
@@ -44,7 +48,7 @@
                 <a href="#" class="scroll-next"><img src="assets/scroll-down-to-find-out.svg" alt="scroll down to find out with an arrow"></a>
             </div>
         </section>
-        <section id="calculator" class="light-blue section">
+        <section id="calculator" class="light-blue section" style="background-image: url('./assets/ipad-calculator-patten.svg')">
             <div class="wrapper">
                 <form action="">
                     <label for="beef-per-week">How many times do you eat beef in a week?</label>
@@ -53,22 +57,22 @@
                     <input type="text" id="beef-per-meal" name="beef-per-meal">
                     <div>
                         <figure>
-                            <img src="assets/taco.svg" alt="taco">
                             <figcaption>
                                 <p>1 serving</p>
                             </figcaption>
+                            <img src="assets/taco.svg" alt="taco">
                         </figure>
                         <figure>
-                            <img src="assets/burger.svg" alt="burger">
                             <figcaption>
                                 <p>2 servings</p>
                             </figcaption>
+                            <img src="assets/burger.svg" alt="burger">
                         </figure>
                         <figure>
-                            <img src="assets/steak.svg" alt="steak">
                             <figcaption>
                                 <p>3 servings</p>
                             </figcaption>
+                            <img src="assets/steak.svg" alt="steak">
                         </figure>
                     </div>
                     <input type="submit" value="Calculate" class="button">
@@ -77,7 +81,7 @@
         </section>
         <section  class="individual-results">
             <div class="wrapper">
-                <h2>Yay</h2>
+                <h2>Yay!</h2>
                 <p>If everyone had your diet in 2050, <span class="individual-percentage"></span> of our <span>emissions threshold</span> would be spent on beef!</p>
                 <svg class="percentage-pie-chart" id="pie" width="362" height="362"></svg>
                 <p class="statement">This is consistent with our current emissions ratios and a good place to be.</p>
@@ -87,14 +91,14 @@
         <section id="emissions" class="light-blue section">
             <div class="wrapper p-large">
                 <h2 class="title-reg">What is the emissions threshold?</h2>
-                <p>Leaders around the world have formed agreements with the goal of limiting global temperature rise by 2° C.</p>
-                <p>To meet this goal, emissions from human activities must stay below 21 gigatons per year by 2050.</p>
+                <p>Leaders around the world have formed agreements with the goal of limiting global temperature rise by <span class="accent">2° C</span>.</p>
+                <p>To meet this goal, emissions from human activities must stay below <span class="accent">21 gigatons per year by 2050</span>.</p>
             </div>
         </section>
         <section  class="pink section city" >
             <div class="wrapper p-large">
                 <p>The situation is intensified by a climb in global population – expected to be 10 billion by 2050.</p>
-                <p>If 10 billion people shared your beef eating habits, we’d create 8 gigatons of greenhouse gas.</p>
+                <p>If 10 billion people shared your beef eating habits, we’d create <span class="accent">8 gigatons</span> of greenhouse gas.</p>
                 <?xml version="1.0" encoding="utf-8"?>
                 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                 <svg class="city_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 792 269.1"
@@ -1559,7 +1563,7 @@
         <section id="problem" class="light-blue section problem-one">
             <div class="wrapper">
                 <h2 class="problem">Problem One</h2>
-                <p class="p-med">Your diet leaves x% of the threshold for:</p>
+                <p class="p-med prob-one">Your diet leaves <span class="accent">x%</span> of the threshold for:</p>
                 <ul class="p-med list">
                     <li>Electricity and heat generation</li>
                     <li>Industry and Manufacturing</li>
@@ -2832,14 +2836,14 @@
                 <p>Combined with non-agricultural sectors, global emissions would greatly exceed 21 gigatons with severe consequences for people, public health, and ecosystems.</p>
                 <p>Today, 14.5% of global emissions come from raising animals for human consumption. Of these emissions, beef production accounts for the largest percentage.</p>
                 <p>Most of the emissions from cows are produced naturally during digestion in the form of methane gas. This gas is 84 times more potent than CO2.</p>
-                <img src="assets/arrow-blue.svg" alt="">
+                <img class="down-arrow" src="assets/arrow-blue.svg" alt="">
             </div>
         </section>
         <section id="impact" class="pink individual-impact section">
             <div class="wrapper p-med">
                 <h2 class="title-reg">What’s your individual impact?</h2>
-                <p>Your annual diet of beef produces 0.2 kg CO2e of greenhouse gas.</p>
-                <p>Thats like driving xkm in an average car.</p>
+                <p>Your annual diet of beef produces <span class="accent">0.2 kg CO2e</span> of greenhouse gas.</p>
+                <p>Thats like driving <span class="accent">xkm</span> in an average car.</p>
                 
                 <?xml version="1.0" encoding="utf-8"?>
                 <!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -3466,7 +3470,7 @@
         <section class="light-blue section">
             <div class="wrapper p-xl">
                 <p>Beef is one major source of greenhouse gas emissions that everyone can choose to limit. By making a conscious decision to change our diet we can make a difference in fighting climate change.</p>
-                <img src="assets/arrow-blue.svg" alt="">
+                <img class="down-arrow" src="assets/arrow-blue.svg" alt="">
             </div>
         </section>
         <section id="should_do"class="multi-wrapper p-sm what-should-i-do section">
@@ -3515,7 +3519,7 @@
         <section class="dark-blue section">
             <div class="wrapper p-large">
                 <h2 class="title-reg">So what do you think?</h2>
-                <p>If everyone ate the same amount of beef as you, that would be x% of the global greenhouse gas emissions budget in 2050.</p>
+                <p>If everyone ate the same amount of beef as you, that would be <span class="accent">x%</span> of the global greenhouse gas emissions budget in 2050.</p>
                 <p>Could you reduce your consumption to help combat climate change?</p>
             </div>
         </section>

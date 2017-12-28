@@ -32,7 +32,7 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
     $('.individual-results').removeClass('good med bad')
     if(percentage_global_threshold < 10) {
         $('.individual-results').addClass('good active')
-        $('.individual-results h2').text('Yay')
+        $('.individual-results h2').text('Yay!')
         $('.individual-results p.statement').text('This is consistent with our current emissions ratios and a good place to be.')
         $('.individual-results img').attr('src', 'assets/good-arrow.svg')
         
@@ -200,10 +200,10 @@ var cityAnimationUp = function(){
       $.scrollify.next(); 
   })
 
-  $('.scroll-next').on('click', (e) => {
-    e.preventDefault();
-    $.scrollify.next(); 
-  })
+//   $('.scroll-next').on('click', (e) => {
+//     e.preventDefault();
+//     $.scrollify.next(); 
+//   })
   $('#nav-open').on('click', (e) => {
       e.preventDefault();
       $('.main-nav').addClass('active')
