@@ -107,19 +107,12 @@ $(function() {
 
 // City animation
 var cityAnimationUp = function(){
+    console.log('city anime')
     var tlCity = new TimelineMax({});
 
     tlCity.to(building_1, 0.5, { x: 0, y: 0 })
+        .to(building_2, 0.5, { x: 0, y: 0 })
         .to(building_3, 0.5, { x: 0, y: 0 })
-        .to(building_5, 0.5, { x: 0, y: 0 })
-        .to(building_7, 0.5, { x: 0, y: 0 })
-        .to(building_9, 0.5, { x: 0, y: 0 })
-        .to(building_11, 0.5, { x: 0, y: 0 })
-        .to(building_12, 0.5, { x: 0, y: 0 })
-        .to(building_13, 0.5, { x: 0, y: 0 })
-        .to(building_14, 0.5, { x: 0, y: 0 })
-        .to(building_15, 0.5, { x: 0, y: 0 })
-        .to(building_16, 0.5, { x: 0, y: 0 })
 }
 
     var cityAnimationDown = function () {
@@ -154,11 +147,93 @@ var cityAnimationUp = function(){
     var tlTruck = new TimelineMax({
         repeat: -1
     })
+    var tlTruck2 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck3 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck4 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck5 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck6 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck7 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck8 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck9 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck10 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck11 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck12 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck13 = new TimelineMax({
+        repeat: -1
+    })
+    var tlTruck14 = new TimelineMax({
+        repeat: -1
+    })
+
 
     var truck_1 = document.getElementById('truck_1')
+   
 
     tlTruck.to(truck_1, 0.2, {x: 0, y: 3})
             .to(truck_1, 0.2, {x: 0, y: 0 })
+
+    tlTruck2.to(truck_2, 0.2, { x: 0, y: 3 })
+        .to(truck_2, 0.2, { x: 0, y: 0 })
+        
+    tlTruck3.to(truck_3, 0.2, { x: 0, y: 3 })
+        .to(truck_3, 0.2, { x: 0, y: 0 })
+        
+    tlTruck4.to(truck_4, 0.2, { x: 0, y: 3 })
+        .to(truck_4, 0.2, { x: 0, y: 0 })
+        
+    tlTruck5.to(truck_5, 0.2, { x: 0, y: 3 })
+        .to(truck_5, 0.2, { x: 0, y: 0 })
+        
+    tlTruck6.to(truck_6, 0.2, { x: 0, y: 3 })
+        .to(truck_6, 0.2, { x: 0, y: 0 })
+        
+    tlTruck7.to(truck_7, 0.2, { x: 0, y: 3 })
+        .to(truck_7, 0.2, { x: 0, y: 0 })
+        
+    tlTruck8.to(truck_8, 0.2, { x: 0, y: 3 })
+        .to(truck_8, 0.2, { x: 0, y: 0 })
+        
+    tlTruck9.to(truck_9, 0.2, { x: 0, y: 3 })
+        .to(truck_9, 0.2, { x: 0, y: 0 })
+        
+    tlTruck10.to(truck_10, 0.2, { x: 0, y: 3 })
+        .to(truck_10, 0.2, { x: 0, y: 0 })
+        
+    tlTruck11.to(truck_11, 0.2, { x: 0, y: 3 })
+        .to(truck_11, 0.2, { x: 0, y: 0 })
+        
+    tlTruck12.to(truck_12, 0.2, { x: 0, y: 3 })
+        .to(truck_12, 0.2, { x: 0, y: 0 })
+        
+    tlTruck13.to(truck_13, 0.2, { x: 0, y: 3 })
+        .to(truck_13, 0.2, { x: 0, y: 0 })
+
+    tlTruck14.to(truck_14, 0.2, { x: 0, y: 3 })
+        .to(truck_14, 0.2, { x: 0, y: 0 })
+
+
 
 
     // Problem One animation
@@ -200,10 +275,10 @@ var cityAnimationUp = function(){
       $.scrollify.next(); 
   })
 
-//   $('.scroll-next').on('click', (e) => {
-//     e.preventDefault();
-//     $.scrollify.next(); 
-//   })
+  $('.scroll-next').on('click', (e) => {
+    e.preventDefault();
+    $.scrollify.next(); 
+  })
   $('#nav-open').on('click', (e) => {
       e.preventDefault();
       $('.main-nav').addClass('active')
@@ -214,6 +289,8 @@ var cityAnimationUp = function(){
   $('.main-nav li').on('click', () => {
       $('.main-nav').removeClass('active')
   })
+
+    // cityAnimationUp()
 });
 
 
