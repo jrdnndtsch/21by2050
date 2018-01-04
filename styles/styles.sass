@@ -8,6 +8,7 @@ $pink : #FFE6ED
 
 $red : #DF3965
 $green : #71BF51
+$lime-green: #8CE06E
 $yellow : #E2B920
 
 $font-header : 'Krona One', sans-serif
@@ -289,12 +290,15 @@ form
 
 
 // GRAPHS
+
 .graph-area, .graph-title-area
     :display flex
     :justify-content space-between
     :align-items flex-end
     :width 80%
     :margin 0 auto
+    .graph-down
+        :margin-bottom 24px
     h2 
         :font-family $font-header 
         :font-size 26px
@@ -306,8 +310,12 @@ form
         :width 20%
     .year-2017, .year-2050
         :width 30%
+        p 
+            :font-size 14px
     .year-2017
         :margin-right 26px
+        p 
+            :font-size 18px
     .year-2050
         :margin-left 26px
     .dash
@@ -329,10 +337,31 @@ form
         :height 360px
         :width 100%
         :background-image url('../assets/graph1.png')
+        :background-repeat no-repeat
+        :transform translateY(9px)
     .blue-graph
         :height 150px
         :width 100%
         :background-color #E2F8FF
+        :position relative
+    .your-diet 
+        :position absolute
+        :width 100%
+        :height 50px
+        :background-color $lime-green
+        :bottom 0
+        &:after 
+            :content ''
+            :width 0 
+            :height 0 
+            :border-left 7px solid transparent
+            :border-right 7px solid transparent
+            :border-top 9px solid $lime-green
+            :position absolute
+            :bottom -8px
+            :left 50%
+            :transform translateX(-50%)
+
 .graph-title-area
     .holder
         :width 20%
@@ -340,7 +369,7 @@ form
         :width 30%
         :border-bottom 2px solid $blue
         :padding 10px
-        :margin 10px 40px
+        :margin 10px 40px 30px 0px
         :text-align center
 .line-21
     :border-bottom 2px dashed $blue
