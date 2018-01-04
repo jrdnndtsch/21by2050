@@ -290,8 +290,10 @@ form
 
 
 // GRAPHS
-
-.graph-area, .graph-title-area
+.graphs 
+    .down-arrow
+        :padding-top 70px
+.graph-area, .graph-title-area, .graph-sub-title-area
     :display flex
     :justify-content space-between
     :align-items flex-end
@@ -324,14 +326,14 @@ form
         &:after
             :content "\2014"
             :position absolute
-            :right 50px
+            :right 40px
     .gt-21 
         :color $blue
     .second-axis
         .dash
             :text-align right
             &:after
-                :left 50px
+                :left 40px
                 :right unset
     .pink-graph
         :height 360px
@@ -350,6 +352,11 @@ form
         :height 50px
         :background-color $lime-green
         :bottom 0
+        :display flex
+        :justify-content center 
+        :align-items center 
+        :color white 
+        :font-size 1.7rem
         &:after 
             :content ''
             :width 0 
@@ -362,18 +369,28 @@ form
             :left 50%
             :transform translateX(-50%)
 
-.graph-title-area
+.graph-title-area, .graph-sub-title-area
     .holder
         :width 20%
     h2  
         :width 30%
         :border-bottom 2px solid $blue
         :padding 10px
-        :margin 10px 40px 30px 0px
+        :margin 10px 28px 30px 0px
         :text-align center
+        &:nth-of-type(2)
+            :margin-left 28px
+            :margin-right unset
+    p 
+        :width 30%
+        :margin-top 28px
+        &:nth-of-type(1)
+            :margin-right 28px
+        &:nth-of-type(2)
+            :margin-left 28px
 .line-21
     :border-bottom 2px dashed $blue
-    :transform translate(0%, -160px)
+    :transform translate(0%, -157px)
     :color transparent
     :width 62%
 

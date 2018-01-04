@@ -251,13 +251,22 @@ var cityAnimationUp = function(){
         tlCloud2.to(cloud_2, 100, { x: 800, y: 0 })
     }
 
+
   $('form').on('submit', (e) => {
       e.preventDefault();
       let beef_per_week = $('#beef-per-week').val();
       let serving_size = $('#beef-per-meal').val();
       let individual_emission = beefcalc.individual_annual_emission(beef_per_week, serving_size);
       let global_emission = beefcalc.global_annual_emissions(individual_emission);
+      let gigatons = parseInt(Math.round(global_emission)) + " gigatons"
+      $('.gigaton').text(gigatons)
       let percentage = beefcalc.percentage_global_threshold(global_emission);
+      let global_emit = parseInt(Math.round(percentage * 100)) + " %"
+      let height = ((21 * percentage) * 18) / 2
+      $('.project-global-emission').text(global_emit)
+      $('.your-diet').css("height", height)
+      let percentage_left = parseInt(100 - Math.round((percentage * 100))) + " %"
+      $('.percentage-left').text(percentage_left)
       let url = 'https://script.google.com/macros/s/AKfycbx0AZ4GbFSqEXloRZCSGwgiYE_uHAX3HjSGe6oCV_AHJTatTFE/exec'
       console.log(percentage)
       sheet_data = $('form').serialize() + '&percentage=' + percentage + '&individual_emission=' + individual_emission + "&global_emission=" + global_emission
