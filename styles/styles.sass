@@ -288,6 +288,66 @@ form
     :display flex
 
 
+// GRAPHS
+.graph-area, .graph-title-area
+    :display flex
+    :justify-content space-between
+    :align-items flex-end
+    :width 80%
+    :margin 0 auto
+    h2 
+        :font-family $font-header 
+        :font-size 26px
+        :font-weight normal
+    .first-axis, .second-axis 
+        :font-size 17px
+        :color #CECAC0
+        :font-weight normal
+        :width 20%
+    .year-2017, .year-2050
+        :width 30%
+    .year-2017
+        :margin-right 26px
+    .year-2050
+        :margin-left 26px
+    .dash
+        :position relative
+        :height 18px 
+        &:after
+            :content "\2014"
+            :position absolute
+            :right 50px
+    .gt-21 
+        :color $blue
+    .second-axis
+        .dash
+            :text-align right
+            &:after
+                :left 50px
+                :right unset
+    .pink-graph
+        :height 360px
+        :width 100%
+        :background-image url('../assets/graph1.png')
+    .blue-graph
+        :height 150px
+        :width 100%
+        :background-color #E2F8FF
+.graph-title-area
+    .holder
+        :width 20%
+    h2  
+        :width 30%
+        :border-bottom 2px solid $blue
+        :padding 10px
+        :margin 10px 40px
+        :text-align center
+.line-21
+    :border-bottom 2px dashed $blue
+    :transform translate(0%, -160px)
+    :color transparent
+    :width 62%
+
 
 // NAVIGATION
 .nav-open 
@@ -297,7 +357,7 @@ form
     :right 40px
 .nav-restart 
     :position fixed
-    :bottom 35px    
+    :bottom 65px    
     :right 40px
     :z-index 1
     :font-size 1.2rem
