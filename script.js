@@ -58,6 +58,8 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
         $('.individual-results.bad').addClass('active')
         $('.bad .individual-percentage').html(percentage_global_threshold + '%')
     }
+    gp_percent = percentage_global_threshold + "%"
+    $('.global-percentage').text(gp_percent)
 
     
     let width = +svg.attr("width"),
@@ -257,6 +259,8 @@ var cityAnimationUp = function(){
       let beef_per_week = $('#beef-per-week').val();
       let serving_size = $('#beef-per-meal').val();
       let individual_emission = beefcalc.individual_annual_emission(beef_per_week, serving_size);
+      let km = Math.round(individual_emission / (0.417 * 1.60943))
+      $('.km').text(km + 'km')
       let global_emission = beefcalc.global_annual_emissions(individual_emission);
       let gigatons = parseInt(Math.round(global_emission)) + " gigatons"
       $('.gigaton').text(gigatons)

@@ -164,6 +164,12 @@ form
         p  
             :margin-right 40px
             :line-height 40px
+@media screen and (max-width: 480px)
+    .solution-block
+        .wrapper
+            :flex-wrap wrap
+        img 
+            :width 140px
 
 //SPECIFICS
 .logo-area
@@ -183,7 +189,7 @@ form
         :margin 0
         :font-family $font-accent
         :font-size 8.6rem
-        :line-height 129px
+        :line-height 12.9rem
     h2:first-of-type 
         :display flex
         :align-items center
@@ -321,7 +327,7 @@ form
         :margin-bottom 24px
     h2 
         :font-family $font-header 
-        :font-size 26px
+        :font-size 2.6rem
         :font-weight normal
     .first-axis, .second-axis 
         :font-size 17px
@@ -331,16 +337,17 @@ form
     .year-2017, .year-2050
         :width 30%
         p 
-            :font-size 14px
+            :font-size 1.4rem
     .year-2017
         :margin-right 26px
         p 
-            :font-size 18px
+            :font-size 1.8rem
     .year-2050
         :margin-left 26px
     .dash
         :position relative
         :height 18px 
+        :font-size 1.7rem
         &:after
             :content "\2014"
             :position absolute
@@ -496,3 +503,37 @@ form
 @media screen and (min-width: 800px) 
     #problem_one_svg
        :transform scale(0.7) translate(270px, -340px) 
+
+@media screen and (max-width: 480px)
+    html 
+        :font-size 32.5%
+    #calculator 
+        img 
+            :width 70px
+    .intro 
+        a
+            img 
+                :width 224px  
+        img 
+            :width 30px
+        h2 
+            :line-height 9.9rem
+    .logo-area
+        :padding 15px 30px 
+        img 
+            :width 80px
+    .problem-two 
+        .p-xl
+            :font-size 4.2rem
+        .wrapper:last-of-type
+            :margin-bottom 100px
+        img 
+            :bottom -70px
+            :width 130px
+    .individual-impact.pink
+        .wrapper
+            :padding-bottom 130px
+    .graph-title-area h2 
+        :margin 10px 28px 10px 0
+    .graphs .down-arrow
+        :display none
