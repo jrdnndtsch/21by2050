@@ -18,7 +18,7 @@ beefcalc.percentage_global_threshold = (global_annual_emissions) => {
 beefcalc.make_pie_chart = (percentage_global_threshold) => {
     $('.individual-results').removeClass('active')
     percentage_global_threshold = Math.round(percentage_global_threshold * 100)
-    console.log(percentage_global_threshold)
+
     let data = [
         {
             val: percentage_global_threshold
@@ -66,7 +66,7 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
         height = +svg.attr("height"),
         radius = Math.min(width, height) / 2,
         g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
+    console.log(width, height)
     let pie = d3.pie()
         .sort(null)
         .value(function(d) { return d.val; });
