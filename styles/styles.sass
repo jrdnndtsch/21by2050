@@ -488,22 +488,39 @@ form
 // SVG Buildings
 .city_svg 
     :transform scale(1.52) translate(-3px, 50px)
-@media screen and (min-width: 800px)
-    .city_svg
-        :transform scale(1) translate(0px,58px)
+// @media screen and (min-width: 800px)
+//     .city_svg
+//         :transform scale(1) translate(0px,58px)
 #truck_svg
     :position absolute
     :transform translateY(-20px)
 
-@media screen and (min-width: 800px)
-    #truck_svg
-        :transform scale(0.5) translateY(-260px);
+// @media screen and (min-width: 800px)
+//     #truck_svg
+//         :transform scale(0.5) translateY(-260px)
 #problem_one_svg
     :transform scale(1.3) translate(-3px, 0px)
-@media screen and (min-width: 800px) 
-    #problem_one_svg
+// @media screen and (min-width: 800px) 
+//     #problem_one_svg
        :transform scale(0.7) translate(270px, -340px) 
-
+@media screen and (min-width: 800px)
+    .fullpage
+        :width 600px
+        :margin 0 auto
+    html 
+        :font-size 42.5%
+    .intro 
+        a
+            img 
+                :width 284px  
+        img 
+            :width 50px
+        h2 
+            :line-height 9.9rem
+        .logo-area
+            :padding 15px 50px 
+            img 
+                :width 120px
 @media screen and (max-width: 480px)
     html 
         :font-size 32.5%
