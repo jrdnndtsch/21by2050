@@ -38,6 +38,7 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
         
         svg = d3.select("#pie")
         color = d3.scaleOrdinal(["#71BF51", "#EAE5DA"])
+        text_color = d3.scaleOrdinal(["#EAE5DA", "#71BF51" ])
         $('.good .individual-percentage').html(percentage_global_threshold + '%')
     } else if(percentage_global_threshold >= 10 && percentage_global_threshold <= 20) {
         $('.individual-results').addClass('med active')
@@ -46,6 +47,7 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
         $('.individual-results img').attr('src', 'assets/med-arrow.svg')
         svg = d3.select("#pie")
         color = d3.scaleOrdinal(["#E2B920", "#EAE5DA"])
+        text_color = d3.scaleOrdinal(["#EAE5DA", "#E2B920"])
         $('.individual-results').addClass('active')
         $('.med .individual-percentage').html(percentage_global_threshold + '%')
     } else {
@@ -55,6 +57,7 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
         $('.individual-results img').attr('src', 'assets/bad-arrow.svg')
         svg = d3.select("#pie")
         color = d3.scaleOrdinal(["#DF3965", "#EAE5DA"])
+        text_color = d3.scaleOrdinal(["#EAE5DA", "#DF3965"])
         $('.individual-results.bad').addClass('active')
         $('.bad .individual-percentage').html(percentage_global_threshold + '%')
     }
@@ -87,12 +90,54 @@ beefcalc.make_pie_chart = (percentage_global_threshold) => {
     arc.append("path")
         .attr("d", path)
         .attr("fill", function(d) { return color(d.data.val); });
+    
+    // arc.append("text")
+    //     .attr("transform", function (d) { return "translate(" + label.centroid(d) + ")"; })
+    //     .attr("dy", "2.2rem")
+    //     .attr('fill', function (d) { return text_color(d.data.val); })
+    //     .attr('font-size', '3.9rem')
+    //     .text(function (d) { return d.data.val + '%'; });
       
+}
+var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function disableScroll() {
+    console.log('in dis')
+    if (window.addEventListener) // older FF
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.onwheel = preventDefault; // modern standard
+    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    window.ontouchmove = preventDefault; // mobile
+    document.onkeydown = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
 }
 
 
 
 $(function() {
+    // disableScroll()
   $.scrollify({
     section : ".section",
     setHeights: false,
@@ -102,6 +147,10 @@ $(function() {
             console.log('start city animation')
         } else if (i === 6) {
             problemOneAnimation();
+        } else if (i === 1){
+            console.log('we on two now')
+            $.scrollify.disable();
+            disableScroll()
         }
      },
   });
@@ -256,10 +305,12 @@ var cityAnimationUp = function(){
 
   $('form').on('submit', (e) => {
       e.preventDefault();
+      $.scrollify.enable();
+      enableScroll()
       let beef_per_week = $('#beef-per-week').val();
       let serving_size = $('#beef-per-meal').val();
       let individual_emission = beefcalc.individual_annual_emission(beef_per_week, serving_size);
-      let km = Math.round(individual_emission / (0.417 * 1.60943))
+      let km = Math.round((individual_emission / 0.417) * 1.60943)
       $('.km').text(km + 'km')
       let global_emission = beefcalc.global_annual_emissions(individual_emission);
       let gigatons = parseInt(Math.round(global_emission)) + " gigatons"

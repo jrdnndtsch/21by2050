@@ -143,9 +143,13 @@ form
         :display flex   
         :margin-top 20px
         :justify-content space-between
+        :width 331px
+        :margin 0 auto
         figcaption p
             :font-size 1.9rem  
             :margin 0  
+        img 
+            :max-width 100%
     .button
         :margin-top 44px     
 
@@ -164,6 +168,7 @@ form
         p  
             :margin-right 40px
             :line-height 40px
+            :font-family $font-accent
 @media screen and (max-width: 480px)
     .solution-block
         .wrapper
@@ -190,6 +195,7 @@ form
         :font-family $font-accent
         :font-size 8.6rem
         :line-height 12.9rem
+
     h2:first-of-type 
         :display flex
         :align-items center
@@ -202,7 +208,7 @@ form
         //     :margin-top 20px
     h2:nth-of-type(2)
         :font-family $font-header
-        :font-size 9rem
+        :font-size 8.6rem
     a 
         :display block
         :text-align center
@@ -273,7 +279,8 @@ form
         :font-size 2.1rem
         :color $blue
         :display block
-        :text-decoration none
+        // :text-decoration none
+        :font-family $font-accent
 
 .individual-results
     :display none
@@ -305,6 +312,8 @@ form
     &.bad            
         :border 9px solid $red
         :color $red
+    .svg-wrapper
+        :text-align center
 
 .individual-results.active
     :display flex
@@ -366,7 +375,7 @@ form
     .pink-graph
         :height 360px
         :width 100%
-        :background-image url('./assets/graph1.png')
+        :background-image url('./assets/graph1.svg')
         :background-repeat no-repeat
         :transform translateY(9px)
         :background-size cover
@@ -425,6 +434,7 @@ form
     :border-bottom 2px dashed $blue
     :transform translate(0%, -157px)
     :color transparent
+    :border-top transparent
     :width 62%
 
 
@@ -442,8 +452,9 @@ form
     :font-size 1.2rem
     :text-decoration none
     :color $blue
-    :background white 
+    :background $beige 
     :padding 10px
+    :font-family $font-header
 .main-nav.active 
     :display block    
 .main-nav 
