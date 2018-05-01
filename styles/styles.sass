@@ -171,6 +171,12 @@ form
             :margin-right 40px
             :line-height 40px
             :font-family $font-accent
+
+    @media screen and (min-width: 1200px)              
+        .wrapper
+            :flex-direction column-reverse
+            :justify-content space-around
+
 @media screen and (max-width: 480px)
     .solution-block
         .wrapper
@@ -218,6 +224,14 @@ form
         img
             :width 424px
             :margin 0 auto
+@media screen and (min-width: 1200px)                
+    .intro
+        h2
+            :font-size 6rem
+            :line-height 8.6rem
+        a 
+            img
+                :width 376px        
 .problem-one
     .prob-one
         :margin-top 60px
@@ -324,6 +338,8 @@ form
 // GRAPHS
 .graphs 
     :background $beige
+    :position relative 
+    :z-index 100
     .down-arrow
         :padding-top 40px
 @media screen and (min-width: 800px)
@@ -515,16 +531,81 @@ form
 #truck_svg
     :position absolute
     :transform translateY(-20px)
+@media screen and (min-width: 1200px)
+    .solution-flex
+        :display flex
+        :min-height 100vh   
+        >div 
+            :width 50%    
+    #emissions
+        .wrapper 
+            :display flex
+            >div 
+                :width 52%    
+        .title-reg
+            :font-size 6.2rem
+            :line-height 8.5rem
+            :width 48%
+            :margin 28px 0
+            :padding-right 40px 
+        p 
+            :font-size 3.4rem 
+    #impact 
+        :padding 0
+        :display flex
+        :align-items center
+        :justify-content center
+        :background linear-gradient( to right, #fff 60%, $pink 60% )    
+        .title-reg
+            :font-size 6.8rem    
+        .wrapper
+            :padding-bottom 40px 
+            >div 
+                :display flex
+                >div 
+                    :width 50%
+                    svg
+                        :width 50%
+                        :bottom -100px
+                        :right -80px
 
-@media screen and (min-width: 800px)
+
+
+@media screen and (min-width: 1200px)
+    #problem
+        .wrapper
+            :display flex
+            >div 
+                :width 40%
+                &:nth-of-type(2) 
+                    :display flex
+                    :align-items flex-end
+                    :width 60%
+                    div 
+                        :width 100%
+    .what-do-you-think
+        .wrapper
+            :display flex
+            h2, >div
+                :width 50%
+            .title-reg
+                :font-size 6.2rem
+                :line-height 8.5rem                                
+@media screen and (max-width: 1200px)
     #truck_svg
         :transform translateY(40px)
-#problem_one_svg
-    :transform scale(1.3) translate(-3px, 0px)
+    #problem_one_svg
+        :transform scale(1.3) translate(-3px, 0px)
 // @media screen and (min-width: 800px) 
 //     #problem_one_svg
        :transform scale(0.7) translate(270px, -340px) 
-@media screen and (min-width: 800px)
+@media screen and (max-width: 1200px)
+    .solution-flex
+        :display flex
+        :flex-direction column
+        :height 100vh
+        >div
+            :height 50vh
     .fullpage
         :width 600px
         :margin 0 auto
