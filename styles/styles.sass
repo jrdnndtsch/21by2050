@@ -130,9 +130,11 @@ form
         :font-size 3rem  
         :display block
         :margin-bottom 28px
-    input + label 
+    input + label, 
+    select + label 
         :margin-top 80px    
-    input[type=text]
+    input[type=text], 
+    select    
         :background $blue-light
         :border none    
         :width 100%
@@ -141,6 +143,9 @@ form
         :color $blue
         :text-align center
         :padding 16px
+    select 
+        :appearance none
+        :text-align center        
     >div 
         :display flex   
         :margin-top 20px

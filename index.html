@@ -52,7 +52,15 @@
             <div class="wrapper">
                 <form action="">
                     <label for="beef-per-week">How many times do you eat beef in a week?</label>
-                    <input type="text" id="beef-per-week" name="beef-per-week" required>
+                    <select id="beef-per-week" name="beef-per-week" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <!-- <input type="text" id="beef-per-week" name="beef-per-week" required> -->
                     <label for="beef-per-meal">On average, how many servings of beef per meal?</label>
                         <div>
                             <figure>
@@ -74,7 +82,15 @@
                                 <img src="assets/steak.svg" alt="steak">
                             </figure>
                         </div>
-                    <input type="text" id="beef-per-meal" name="beef-per-meal" required>
+                    <!-- <input type="text" id="beef-per-meal" name="beef-per-meal" required> -->
+                    <select id="beef-per-meal" name="beef-per-meal" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
                     <input type="submit" value="Calculate" class="button">
                 </form>
             </div>
